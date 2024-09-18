@@ -1,5 +1,8 @@
-const FavoritesPega = () => {
-  return <div>FavoritesPega</div>;
+import clsx from 'clsx';
+import s from './FavoritesPage.module.css';
+
+const FavoritesPage = () => {
+  return <div>Favorites</div>;
 };
 
-export default FavoritesPega;
+export default FavoritesPage;
