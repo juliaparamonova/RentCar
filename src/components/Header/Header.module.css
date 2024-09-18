@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header_list {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+}
+
+.header_title {
+    color: black;
+}
