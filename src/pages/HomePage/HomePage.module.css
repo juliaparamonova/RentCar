@@ -1,0 +1,10 @@
+.image_container {
+    display: flex;
+    gap: 20px;
+    background-image: url('../../images/audi.jpg');
+    background-size: cover;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+
+}
