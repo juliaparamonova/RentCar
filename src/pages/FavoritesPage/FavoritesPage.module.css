@@ -1,5 +1,6 @@
 .span_logo {
     color: #3470ff;
+    padding-left: 10px;
 }
 
 
@@ -8,6 +9,7 @@
     height: 426px;
     object-fit: cover;
     border-radius: 14px;
+
 }
 
 .card_list {
@@ -18,4 +20,9 @@
     align-items: center;
     gap: 29px;
     margin-bottom: 29px;
+}
+
+.title_favorites {
+    padding-left: 20px;
+
 }

@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-
 import { carsReducer } from './cars/carsSlice';
 import { modalReducer } from './modal/slice';
 

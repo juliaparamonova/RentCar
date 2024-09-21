@@ -19,7 +19,7 @@ const FavoritesPage = () => {
 
   return (
     <div>
-      <h1>
+      <h1 className={clsx(s.title_favorites)}>
         My favorite <span className={clsx(s.span_logo)}>cars</span>
       </h1>
       <ul className={clsx(s.card_list)}>
