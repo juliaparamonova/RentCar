@@ -1,4 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavorite } from '../../redux/cars/carsSlice';
+import { openModal } from '../../redux/modal/slice';
+import { MdFavoriteBorder, MdOutlineFavorite } from 'react-icons/md';
+import s from './CarItem.module.css';
+import clsx from 'clsx';
+import { selectFavoriteCars } from '../../redux/cars/selectors';
 
 const CarItem = ({
   id,
@@ -19,33 +25,80 @@ const CarItem = ({
   mileage,
 }) => {
   const dispatch = useDispatch();
-  const carData = useSelector(state => state.cars.find(car => car.id === id));
+
+  const handleToggleFavorite = () => {
+    dispatch(toggleFavorite(id));
+  };
+
+  const [, city, country] = address.split(', ');
+
+  const isFavorite = useSelector(selectFavoriteCars).includes(id);
+
+  const handleLearnMore = () => {
+    dispatch(
+      openModal({
+        id,
+        img,
+        make,
+        model,
+        year,
+        rentalPrice,
+        type,
+        functionalities,
+        address,
+        fuelConsumption,
+        engineSize,
+        description,
+        accessories,
+        rentalConditions,
+        mileage,
+      })
+    );
+  };
 
   return (
     <>
+      <div className={clsx(s.block_heart)}>
+        <button
+          className={clsx(s.heart)}
+          type="button"
+          onClick={handleToggleFavorite}
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          {isFavorite ? (
+            <MdOutlineFavorite size="20px" color="#3470ff" />
+          ) : (
+            <MdFavoriteBorder size="20px" color="#fff" />
+          )}
+        </button>
+      </div>
       <img
-        src={carData.img}
-        alt={`${carData.make} ${carData.model}`}
+        className={clsx(s.car_img)}
+        src={img}
+        alt={`${make} ${model}`}
         width="274px"
         height="268px"
       />
-      <div>
-        <p>
-          {carData.make} {carData.model}, {carData.year}
-        </p>
-        <p>{carData.rentalPrice}</p>
+      <div className={clsx(s.name_car)}>
+        <div className={clsx(s.car_details)}>
+          <p>
+            {make} <span className={clsx(s.span_model)}>{model}</span>, {year}
+          </p>
+        </div>
+        <p>{rentalPrice}</p>
       </div>
 
-      <div>
-        <p>{carData.address}</p>
-        <p>{carData.rentalCompany}</p>
-        <p>{carData.type}</p>
-        <p>{carData.model}</p>
-        <p>{carData.id}</p>
-        <p>{carData.functionalities?.[0]}</p>
-      </div>
-
-      <button>Learn more</button>
+      <p className={clsx(s.info)}>
+        {city} | {country} | {rentalCompany} | {type} | {model} | {id} |{' '}
+        {functionalities?.[0]}
+      </p>
+      <button
+        className={clsx(s.learn_more)}
+        type="button"
+        onClick={handleLearnMore}
+      >
+        Learn more
+      </button>
     </>
   );
 };

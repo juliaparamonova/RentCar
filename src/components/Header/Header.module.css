@@ -1,6 +1,7 @@
 .header {
     display: flex;
     flex-direction: row;
+    padding-left: 20px
 }
 
 .header_list {
@@ -11,5 +12,14 @@
 }
 
 .header_title {
+    color: black;
+
+}
+
+.span_logo {
+    color: #3470ff;
+}
+
+.link {
     color: black;
 }

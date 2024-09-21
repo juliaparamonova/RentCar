@@ -1,0 +1,79 @@
+.search {
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    padding: 14px 44px;
+    width: 136px;
+    height: 36px;
+    background: #3470ff;
+    align-items: center
+}
+
+.reset {
+    border-radius: 12px;
+    padding: 14px 44px;
+    width: 136px;
+    height: 36px;
+    background: #3470ff;
+    align-items: center;
+    display: flex;
+
+}
+
+.filter_item {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.text_filter {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28571;
+    color: #8a8a89;
+    margin-bottom: 8px;
+}
+
+.brand_mil {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    border-radius: 14px
+}
+
+.filter_input {
+    border-right: 1px solid rgba(138, 138, 137, 0.2);
+    border-radius: 12px 0 0 12px;
+    width: 160px;
+    height: 32px;
+    background: #f7f7fb;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.11111;
+    color: #121417;
+}
+
+.filter_input2 {
+    border-left: 1px solid rgba(138, 138, 137, 0.2);
+    border-radius: 0 12px 12px 0;
+    width: 160px;
+    height: 32px;
+    background: #f7f7fb;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.11111;
+    color: #121417;
+}
+
+.select {
+    border-radius: 14px;
+    color: black;
+    height: 36px;
+
+}

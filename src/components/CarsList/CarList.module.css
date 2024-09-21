@@ -1,0 +1,16 @@
+.car_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 29px;
+    row-gap: 50px;
+    margin-bottom: 100px;
+
+}
+
+.car_blank {
+    border-radius: 14px;
+    position: relative;
+    max-width: 274px;
+    min-height: 426px;
+}

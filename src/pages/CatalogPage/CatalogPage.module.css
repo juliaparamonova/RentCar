@@ -1,0 +1,39 @@
+.catalog {
+    gap: 34px;
+}
+
+.catalog_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.load_more {
+
+
+    background-color: transparent;
+    color: #3470ff;
+    display: flex;
+    height: 44px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.load_more:hover,
+.load_more:focus {
+    background-color: #0b44cd;
+    background-color: transparent;
+}
+
+
+
+
+.spinnersMore {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}

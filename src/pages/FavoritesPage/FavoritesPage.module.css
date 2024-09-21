@@ -1,0 +1,21 @@
+.span_logo {
+    color: #3470ff;
+}
+
+
+.card_block {
+    width: 274px;
+    height: 426px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.card_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 29px;
+    margin-bottom: 29px;
+}

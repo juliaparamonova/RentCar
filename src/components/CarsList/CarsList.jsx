@@ -1,49 +1,31 @@
-// import { useEffect, useState } from 'react';
-// import { fetchCars } from '../../redux/operation';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-// export const CarsList = () => {
-//   const [cars, setCars] = useState([]);
+import { selectFilterCars } from '../../redux/cars/selectors';
+import CarItem from '../CarItem/CarItem';
+import { fetchCarsThunk } from '../../redux/cars/operations';
+import clsx from 'clsx';
+import s from './CarList.module.css';
 
-//   useEffect(() => {
-//     const getCars = async () => {
-//       try {
-//         const { cars } = await fetchCars({});
-//         setCars(cars);
-//       } catch (error) {
-//         console.log(error);
-//       }
-//     };
-//     getCars();
-//   }, []);
-//   return (
-//     <div>
-//       <ul>
-//         {cars.map(cars => (
-//           <li key={cars.id}>
-//             <img src={cars.image} alt={cars.title} />
-//           </li>
-//         ))}
-//       </ul>
-//       CarsList
-//     </div>
-//   );
-// };
-
-import { useEffect, useState } from 'react';
-import { fetchCars } from '../../redux/operation';
-
-export const CarsList = ({ cars }) => {
-  const [carList, setCarList] = useState([]);
+const CarList = () => {
+  const cars = useSelector(selectFilterCars);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCars().then(fetchedCars => setCarList(fetchedCars));
-  }, []);
+    dispatch(fetchCarsThunk());
+  }, [dispatch]);
 
   return (
-    <div>
-      {carList.map(car => (
-        <div key={car.id}>{car.name}</div>
-      ))}
-    </div>
+    <ul className={clsx(s.car_list)}>
+      {cars.map(car => {
+        return (
+          <li key={car.id} className={clsx(s.car_blank)}>
+            <CarItem {...car} />
+          </li>
+        );
+      })}
+    </ul>
   );
 };
+
+export default CarList;

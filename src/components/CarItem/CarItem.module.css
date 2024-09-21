@@ -1,0 +1,53 @@
+.car_img {
+    width: 100%;
+    height: 268px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.name_car {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.span_model {
+    color: #3470ff;
+    margin-left: 5px;
+}
+
+.info {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(18, 20, 23, 0.5);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+
+}
+
+.learn_more {
+    width: 274px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: #3470ff;
+    height: 44px;
+}
+
+.block_heart {
+    position: relative;
+    color: #fff;
+}
+
+.heart {
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    background-color: transparent;
+    color: #fff;
+}
