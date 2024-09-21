@@ -1,5 +1,4 @@
 import toast from 'react-hot-toast';
-// import { ThreeCircles } from 'react-spinners';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
@@ -41,19 +40,7 @@ const CatalogPage = () => {
       <div className={clsx(s.catalog_item)}>
         <CarsList />
         <ImageModal />
-        {isLoading && (
-          <div>
-            {/* <ThreeCircles
-              visible={true}
-              height="100"
-              width="100"
-              color="#4fa94d"
-              ariaLabel="three-circles-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-            /> */}
-          </div>
-        )}
+        {isLoading && <div></div>}
         {!isLastPage && !isLoading && (
           <button onClick={handleLoadMore} className={clsx(s.load_more)}>
             Load more

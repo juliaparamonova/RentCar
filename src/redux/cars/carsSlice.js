@@ -24,9 +24,6 @@ export const carsSlice = createSlice({
     filterCars: (state, action) => {
       const { brand, price, mileageFrom, mileageTo } = action.payload;
 
-      // const validMileageFrom = mileageFrom >= 0 ? mileageFrom : 0;
-      // const validMileageTo = mileageTo >= 0 ? mileageTo : 0;
-
       state.filterItems = state.items.filter(car => {
         const isSelectBrand =
           !brand || car.make.toLowerCase() === brand.toLowerCase();
