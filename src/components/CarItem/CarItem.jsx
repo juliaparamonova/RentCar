@@ -81,7 +81,7 @@ const CarItem = ({
       />
       <div className={clsx(s.name_car)}>
         <div className={clsx(s.car_details)}>
-          <p>
+          <p className={clsx(s.long_name)}>
             {make} <span className={clsx(s.span_model)}>{model}</span>, {year}
           </p>
         </div>
